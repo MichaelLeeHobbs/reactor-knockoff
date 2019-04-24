@@ -1091,7 +1091,12 @@ var tile_tooltip_show = function(e) {
 		tile.$el.className += ' tile_active';
 	}
 
-	part.showTooltip(tile);
+	try { 
+		part.showTooltip(tile);
+	}
+	catch (e) {
+	}
+	
 	tooltip_showing = true;
 
 	tooltip_tile = tile;
@@ -1457,7 +1462,11 @@ var part_tooltip_show = function(e) {
 		$main.className += ' tooltip_showing';
 	}
 
-	part.showTooltip();
+	try { 
+		part.showTooltip();
+	}
+	catch (e) {
+	}
 	tooltip_showing = true;
 	tooltip_part = part;
 	tooltip_update = part_tooltip_update;
@@ -1561,7 +1570,11 @@ var tooltip_upgrade = null;
 var upgrade_tooltip_show = function(e) {
 	var upgrade = this.upgrade;
 
-	upgrade.showTooltip();
+	try { 
+		upgrade.showTooltip();
+	}
+	catch (e) {
+	}
 	if ( !tooltip_showing ) {
 		$main.className += ' tooltip_showing';
 	}
